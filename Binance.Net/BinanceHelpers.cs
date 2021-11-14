@@ -56,7 +56,7 @@ namespace Binance.Net
             quantity = Math.Max(minQuantity, quantity);
             if (stepSize == 0)
                 return quantity;
-            quantity -= quantity % stepSize;
+            quantity -= Math.IEEERemainder(quantity, stepSize);
             quantity = Floor(quantity);
             return quantity;
         }
